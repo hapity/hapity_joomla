@@ -7,8 +7,8 @@
 	<author>EgenieNext</author>
 	<authorEmail>nshah@egenienext.com</authorEmail>
 	<authorUrl>http://www.egenienext.com/</authorUrl>
-	<copyright>Copyright Info</copyright>
-	<license>License Info</license>
+	<copyright>hapity.com</copyright>
+	<license>GNU/GPLv2 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<!--  The version string is recorded in the components table -->
 	<version>1.0.4</version>
 	<!-- The description is optional and defaults to the name -->

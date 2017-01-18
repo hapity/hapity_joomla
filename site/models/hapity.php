@@ -53,7 +53,7 @@ class HapityModelHapity extends JModelList
 		$data = array(
 			'alias'=>"broad-cast-".rand(100,100000000000000),
 		    'catid' => 0,
-		    'title' => urldecode($title),
+		    'title' => $title,
 		    'introtext' => '',
 		    'fulltext' => $iframe,
 		    'state' => 1,

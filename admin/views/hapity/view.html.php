@@ -42,7 +42,7 @@ class HapityViewHapity extends JViewLegacy
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
 		{
-			JError::raiseError(500, implode('<br />', $errors));
+			$application->enqueueMessage(JText::_('SOME_ERROR_OCCURRED'), 'error');
  
 			return false;
 		}

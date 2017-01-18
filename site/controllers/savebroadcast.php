@@ -23,12 +23,12 @@ class HapityControllerSavebroadcast  extends JControllerLegacy
             
 
 
+   
 
-
-		if(isset($_GET["action"]) 
-			&& isset($_GET["stream_url"])
-			&& isset($_GET["bid"])
-			&& isset($_GET["key"])
+		if($jinput->get->get('action',null)
+			&& $jinput->get->get('stream_url',null)
+			&& $jinput->get->get('bid',null)
+			&& $jinput->get->get('key',null)
 			){
 
 
