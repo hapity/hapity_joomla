@@ -8,7 +8,7 @@
  */
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
- 
+    
 /**
  * hapitys Controller
  *
@@ -16,52 +16,43 @@ defined('_JEXEC') or die('Restricted access');
  */
 class HapityControllerSavebroadcast  extends JControllerLegacy
 {
-
+    
 	function getBroadcastData(){
-
-
+            
+            
+            
+            
             
 
+    
+		if(isset($_GET["key"]) && isset($_GET["bid"]) && isset($_GET["stream_url"]) 
+                        && isset($_GET["title"]) && isset($_GET["broadcast_image"]) ){
+                            
+                         
 
-   
-
-		if($jinput->get->get('action',null)
-			&& $jinput->get->get('stream_url',null)
-			&& $jinput->get->get('bid',null)
-			&& $jinput->get->get('key',null)
-			){
-
-
-
-
-                $jinput = JFactory::getApplication()->input;
-            $key = $jinput->get('key','', 'STRING');
-            $status = $jinput->get('status','', 'STRING');
-            $bid = $jinput->get('bid','', 'STRING');
-            $stream_url = $jinput->get('stream_url','', 'STRING');
-            $title = $jinput->get('title','', 'STRING');
-
-                 $model = $this->getModel('hapity');
-            $model->removeIframe();
-
-            
-            $is_key = $model->checkKey($key);
-            if(count($is_key) == 1){
-            $model->createArticle($bid,$title,$stream_url,$status,$key);
-			die("here 1");
-
-            }
+                        $jinput = JFactory::getApplication()->input;
+                        $key = $jinput->get('key','', 'STRING');
+                        $status = $jinput->get('status','', 'STRING');
+                        $bid = $jinput->get('bid','', 'STRING');
+                        $stream_url = $jinput->get('stream_url','', 'STRING');
+                        $title = $jinput->get('title','', 'STRING');
+                        $broadcast_image = $jinput->get('broadcast_image','', 'STRING');
+                        
+                        $model = $this->getModel('hapity');
+                        $model->removeIframe();
 
 
+                        $is_key = $model->checkKey($key);
+                  
+                        if(true){
+                            $model->createArticle($bid,$title,$stream_url,$status,$key,$broadcast_image);
+                       
+                        }
 
-			
-			die("here 2");
 
-
-
-		}
-
-		die("here 3");
-
+                }
+                    
+		
+                    
 	}
 }

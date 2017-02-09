@@ -45,11 +45,11 @@ class HapityModelHapity extends JModelList
 
 	}
 
-	function createArticle($bid,$title,$sUrl,$status,$key){
+	function createArticle($bid,$title,$sUrl,$status,$key,$broadcast_image){
 		$table = JTable::getInstance('Content', 'JTable', array());
 
-		$iframe = '<iframe height="600" width="100%" scrolling="no" frameborder="0" src="http://api.hapity.com/widget.php?stream='.$sUrl.'&title='.$title.'&status='.$status.'&bid='.$bid.'"></iframe>';
-
+		$iframe = '<iframe height="600" width="100%" scrolling="no" frameborder="0" src="http://api.hapity.com/widget.php?broadcast_image='.$broadcast_image.'&stream='.$sUrl.'&title='.$title.'&status='.$status.'&bid='.$bid.'"></iframe>';
+                
 		$data = array(
 			'alias'=>"broad-cast-".rand(100,100000000000000),
 		    'catid' => 0,
@@ -58,15 +58,10 @@ class HapityModelHapity extends JModelList
 		    'fulltext' => $iframe,
 		    'state' => 1,
 		    "featured"=>1,
-		    'metadata' => '{"robots":"","author":"Hapity","rights":"","xreference":"","tags":null}',
+		    'metadata' => '{"og:description":"'.$title.'","og:image":"'.$broadcast_image.'","og:title":"'.$title.'"}',
 		    "created_by_alias"=>"Hapity.com"
 		);
 
-
-
-
-
-		
 
 		// Bind data
 if (!$table->bind($data))
@@ -87,9 +82,29 @@ if (!$table->store())
 {
 
 
-
     
     die($table->getError());
+}
+else{
+
+   $id = $table->id; 
+   $article_url = JURI::root().'index.php?option=com_content&view=article&id='.$id;
+   $table->load($id);
+   $data = array(
+            'alias'=>"broad-cast-".rand(100,100000000000000),
+        'catid' => 0,
+        'title' => $title,
+        'introtext' => '',
+        'fulltext' => $iframe,
+        'state' => 1,
+        "featured"=>1,
+        'metadata' => '{"og:description":"'.$title.'","og:image":"'.$broadcast_image.'","og:title":"'.$title.'","og:url":"'.$article_url.'"}',
+        "created_by_alias"=>"Hapity.com"
+    );
+   $table->bind($data);
+   $table->store();
+   echo $article_url;
+   die();
 }
 
 

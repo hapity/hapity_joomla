@@ -33,11 +33,11 @@ class HapityControllerHapitySave extends JControllerAdmin
 		$app = JFactory::getApplication();
 		
 
-		 if($jinput->post->get('submit',null); && $jinput->post->get('hapity_key',null);){
-             $model = $this->getModel('hapity');
+		 if($jinput->post->get('submit',null) && $jinput->post->get('hapity_key',null)){
+                    $model = $this->getModel('hapity');
 
-             $model->updateStatus((int)$jinput->post->get('enable_key',0));
-             $app->redirect(JUri::base() ."index.php?option=com_hapity","Data Saved",'message');
+                    $model->updateStatus((int)$jinput->post->get('enable_key',0));
+                    $app->redirect(JUri::base() ."index.php?option=com_hapity","Data Saved",'message');
           }
 
           
