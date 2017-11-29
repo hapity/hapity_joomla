@@ -20,10 +20,6 @@ $formData = $this->formData;
  $yes = ((int)$enable) ?  "checked='checked'" : "";
  $no = (!(int)$enable) ?  "checked='checked'" : "";
 
-
-
-
-
 ?>
 
 <div class="alert hide" role="alert">
@@ -119,6 +115,8 @@ $formData = $this->formData;
                      jQuery(".alert").removeClass().addClass("alert alert-danger alert-dismissible").find(".msg").text("Key entered is worng.Please enter correct key and try again");
 
                 	}
+
+                  window.location.reload();
 
 
                      
