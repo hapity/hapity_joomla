@@ -20,7 +20,7 @@ class HapityModelHapity extends JModelList
 
 
 
-	function Savekey($key,$en = 0){
+	function Savekey($key,$en = 1){
 					// Get a db connection.
 			$db = JFactory::getDbo();
 			 
