@@ -31,19 +31,15 @@ class HapityControllerHapitySave extends JControllerAdmin
 	{
 
 		$app = JFactory::getApplication();
-		
+		$app_input = $app->input;
 
-		 if($jinput->post->get('submit',null) && $jinput->post->get('hapity_key',null)){
-                    $model = $this->getModel('hapity');
+		if($app_input->post->get('submit',null) && $app_input->post->get('hapity_key',null)){
+			$model = $this->getModel('hapity');
 
-                    $model->updateStatus((int)$jinput->post->get('enable_key',0));
-                    $app->redirect(JUri::base() ."index.php?option=com_hapity","Data Saved",'message');
-          }
-
-          
-
-          $app->redirect(JUri::base() ."index.php?option=com_hapity");
-
+			$model->updateStatus((int)$app_input->post->get('enable_key',0));
+			$app->redirect(JUri::base() ."index.php?option=com_hapity","Data Saved",'message');
+		}
+		$app->redirect(JUri::base() ."index.php?option=com_hapity");
 	}
 
 	public function validateKey(){
@@ -88,16 +84,8 @@ class HapityControllerHapitySave extends JControllerAdmin
 	}
 
 	function getBroadcastData(){
-
-		
-                $jinput = JFactory::getApplication()->input;
-           
-
-			$model = $this->getModel('hapity'); 
-			die;
-
-
-
-
+		$jinput = JFactory::getApplication()->input;
+		$model = $this->getModel('hapity');
+		die;
 	}
 }
