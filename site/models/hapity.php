@@ -48,7 +48,7 @@ class HapityModelHapity extends JModelList {
 
         $data_content = '';
         if (!empty($sUrl)) {
-            $iframe = '<iframe height="600" width="100%" scrolling="no" frameborder="0" src="http://api.hapity.com/widget.php?broadcast_image=' . $broadcast_image . '&stream=' . $sUrl . '&title=' . $title . '&status=' . $status . '&bid=' . $bid . '"></iframe>';
+            $iframe = '<iframe height="600" width="100%" scrolling="no" frameborder="0" src="https://api.hapity.com/widget.php?broadcast_image=' . $broadcast_image . '&stream=' . $sUrl . '&title=' . $title . '&status=' . $status . '&bid=' . $bid . '"></iframe>';
             $data_content = $iframe;
         } else if (!empty($broadcast_image)) {
             $data_content = '<div style="width:100%;"><img src="' . $broadcast_image . '"></div>';
@@ -147,7 +147,7 @@ class HapityModelHapity extends JModelList {
 
         $data_content = '';
         if (!empty($sUrl)) {
-            $iframe = '<iframe height="600" width="100%" scrolling="no" frameborder="0" src="http://api.hapity.com/widget.php?broadcast_image=' . $broadcast_image . '&stream=' . $sUrl . '&title=' . $title . '&status=' . $status . '&bid=' . $bid . '"></iframe>';
+            $iframe = '<iframe height="600" width="100%" scrolling="no" frameborder="0" src="https://api.hapity.com/widget.php?broadcast_image=' . $broadcast_image . '&stream=' . $sUrl . '&title=' . $title . '&status=' . $status . '&bid=' . $bid . '"></iframe>';
             $data_content = $iframe;
         } else if (!empty($broadcast_image)) {
             $data_content = '<div style="width:100%;"><img src="' . $broadcast_image . '"></div>';
