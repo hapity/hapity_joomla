@@ -41,6 +41,22 @@ $formData = $this->formData;
  
  <?php if(!$key || $key == ""){ ?>
   <button type="button" id="hapity_aturize" data-loading-text="cheking..." class="btn btn-primary " autocomplete="off">Authenticate Key</button>
+  <div id="hapity-help-text">
+      <ol>
+          <li>To get started, create your free Hapity account. Go to the <a href="https://www.hapity.com/register" target="_blank"> registration page</a> and enter your desired login credentials. Or, you can also sign in with Facebook or Twitter:</li>
+          <li>In order to connect your Hapity account to your Joomla site, you'll use something called an "Auth ID" to link the two together.</li>
+          <li>To find your Auth ID, <a href="https://www.hapity.com/home/login" target="_blank">log in</a> to your Hapity account and click on <strong>Settings</strong> in the top-right corner:</li>
+          <li>Then, scroll down and find the box for Plugin ID, which contains a long string of numbers and letters. Copy the value in this box:</li>
+          <li>Come back to this page and paste in <strong>Auth ID</strong></li>
+          <li>Click on authenticate key and submit</li>
+      </ol>
+      <video id="hapity-video" controls="" poster="https://www.hapity.com/assets/images/integrate-with-joomla.jpg" src="https://www.hapity.com/assets/videos/How-To_Joomla_Edit03_Vimeo_720p.mov"></video>
+  </div>
+  <style type="text/css">
+    #hapity-video {
+        width: 500px;
+    }
+  </style>
   <?php }else{  ?>
 
   <button type="button" id="remove_key" data-loading-text="Removing" class="btn btn-danger" autocomplete="off">Remove Key</button>
